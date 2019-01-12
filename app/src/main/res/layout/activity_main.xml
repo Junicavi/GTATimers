@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/colorPrimary">
+
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/criminal"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="15dp"
+            android:onClick="securoServ"
+            android:background="@drawable/securoserv" />
+        <ImageButton
+            android:id="@+id/bikers"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="15dp"
+            android:onClick="bikers"
+            android:background="@drawable/bikers" />
+        <ImageButton
+            android:id="@+id/gunrunning"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="15dp"
+            android:onClick="gunrunning"
+            android:background="@drawable/gunrunning" />
+        <ImageButton
+
+            android:id="@+id/smugglers"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="15dp"
+            android:onClick="smugglers"
+            android:background="@drawable/smugglers" />
+        <ImageButton
+
+            android:id="@+id/afterhours"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="15dp"
+            android:onClick="afterhours"
+            android:background="@drawable/afterhours" />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
