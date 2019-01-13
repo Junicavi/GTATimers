@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="LoginTextFields" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/White_GTA</item>
+        <item name="colorControlActivated">@color/Blue_GTA</item>
+    </style>
+
 </resources>

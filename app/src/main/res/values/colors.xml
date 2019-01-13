@@ -3,5 +3,6 @@
     <color name="colorPrimary">#198e3c</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="White">#ffff</color>
+    <color name="White_GTA">#ffffff</color>
+    <color name="Blue_GTA">#32618e</color>
 </resources>

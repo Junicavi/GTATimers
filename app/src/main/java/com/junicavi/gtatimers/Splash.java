@@ -17,10 +17,10 @@ private ImageView iv;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        iv = (ImageView) findViewById(R.id.iv);
+        iv = findViewById(R.id.iv);
         Animation splashAnimation = AnimationUtils.loadAnimation(this, R.anim.splashtransition);
         iv.startAnimation(splashAnimation);
-        final Intent i = new Intent(this, MainActivity.class);
+        final Intent i = new Intent(this, Login.class);
         Thread timer = new Thread(){
             public void run(){
                 try {
