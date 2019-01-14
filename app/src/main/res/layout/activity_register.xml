@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/backLayout"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Login">
+    tools:context=".Register">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +19,7 @@
         <ImageView
             android:id="@+id/logo"
             android:layout_width="wrap_content"
-            android:layout_height="350dp"
+            android:layout_height="300dp"
             android:layout_gravity="center"
             android:contentDescription="@string/main_logo"
             android:src="@drawable/logo" />
@@ -29,7 +28,6 @@
             android:id="@+id/userField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="Ingrese Su Usuario"
             android:inputType="textPersonName"
@@ -38,12 +36,12 @@
             android:textColorLink="@color/colorAccent"
             android:textStyle="bold"
             android:theme="@style/LoginTextFields" />
+            <!--android:layout_marginTop="10dp"-->
 
         <EditText
             android:id="@+id/passwordField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="100dp"
             android:ems="10"
             android:hint="Ingrese Su Contraseña"
             android:inputType="textPassword"
@@ -51,38 +49,58 @@
             android:textColorHint="@android:color/white"
             android:textColorLink="@color/colorAccent"
             android:textStyle="bold"
+            android:layout_marginBottom="10dp"
             android:theme="@style/LoginTextFields" />
-
-        <Button
-            android:id="@+id/loginButton"
+        <EditText
+            android:id="@+id/mailField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/round_shape_btn_white"
-            android:text="Iniciar Sesión"
-            android:onClick="startLogin"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold" />
+            android:ems="10"
+            android:hint="Ingrese Su Correo"
+            android:inputType="textPassword"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textColorLink="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:theme="@style/LoginTextFields" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:background="@drawable/imageview_border"
+                android:src="@drawable/user"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="10dp"/>
+
+            <Button
+                android:id="@+id/uploadButton"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_shape_btn_white"
+                android:text="Subir Imagen"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/round_shape_btn_blue"
-            android:text="Registrarse"
-            android:onClick="RegisterForm"
+            android:background="@drawable/round_shape_btn_white"
+            android:text="Registrar Usuario"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold" />
+            <!--android:layout_marginBottom="20dp"-->
+
     </LinearLayout>
-
-    <ProgressBar
-        android:id="@+id/progressbar1"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="-50dp" />
-
 
 </RelativeLayout>

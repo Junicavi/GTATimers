@@ -1,6 +1,7 @@
 package com.junicavi.gtatimers;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -27,11 +28,13 @@ public class Login extends AppCompatActivity {
     EditText username,password;
     ProgressBar progressBar;
     // End Declaring layout button, edit texts
-
+    Boolean state = false;
+    Boolean ended = false;
     // Declaring connection variables
     Connection con;
     String un,pass,db,ip;
     //End Declaring connection variables
+
 
 
     RelativeLayout relativeLayout;
@@ -57,7 +60,7 @@ public class Login extends AppCompatActivity {
         // Declaring Server ip, username, database name and password
 
         // Setting up the function when button login is clicked
-        login.setOnClickListener(new View.OnClickListener()
+        /*login.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -65,8 +68,24 @@ public class Login extends AppCompatActivity {
                 CheckLogin checkLogin = new CheckLogin();// this is the Asynctask, which is used to process in background to reduce load on app process
                 checkLogin.execute("");
             }
-        });
+        });*/
         //End Setting up the function when button login is clicked
+    }
+
+    public void changeActivity(){
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        finish();
+    }
+
+    public void RegisterForm(View v){
+        Intent i = new Intent(this, Register.class);
+        startActivity(i);
+    }
+
+    public void startLogin (View v){
+        CheckLogin checkLogin = new CheckLogin();// this is the Asynctask, which is used to process in background to reduce load on app process
+        checkLogin.execute();
     }
 
     private int getRandomNumber() {
@@ -76,6 +95,7 @@ public class Login extends AppCompatActivity {
 
     public class CheckLogin extends AsyncTask<String,String,String>
     {
+        Context ctx;
         String z = "";
         Boolean isSuccess = false;
 
@@ -123,6 +143,7 @@ public class Login extends AppCompatActivity {
                             z = "Login successful";
                             isSuccess=true;
                             con.close();
+                            state = true;
                         }
                         else
                         {
@@ -137,9 +158,14 @@ public class Login extends AppCompatActivity {
                     z = ex.getMessage();
                 }
             }
+            if(state == true){
+                changeActivity();
+            }
             return z;
         }
     }
+
+
 
     @SuppressLint("NewApi")
     public Connection connectionclass(String user, String password, String database, String server)
@@ -147,11 +173,11 @@ public class Login extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         Connection connection = null;
-        String ConnectionURL = null;
+        String ConnectionURL;
         try
         {
             Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            ConnectionURL = "jdbc:jtds:sqlserver://" + server + database + ";user=" + user+ ";password=" + password + ";";
+            ConnectionURL = "jdbc:jtds:sqlserver://"+server+";databaseName="+database+";user="+user+";password="+password+"";
             connection = DriverManager.getConnection(ConnectionURL);
         }
         catch (SQLException se)

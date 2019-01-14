@@ -30,6 +30,7 @@
         <activity android:name=".Fourth_b" />
         <activity android:name=".Fifth_b" />
         <activity android:name=".Login" />
+        <activity android:name=".Register"></activity>
     </application>
 
 </manifest>
